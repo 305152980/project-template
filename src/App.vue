@@ -3,15 +3,13 @@
 </template>
 
 <script>
+import DevicePixelRatio from '@/utils/devicePixelRatio'
 export default {
-  name: 'App'
+  name: 'App',
+  created() {
+    new DevicePixelRatio().init()
+  }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-</style>
+<style lang="scss"></style>
