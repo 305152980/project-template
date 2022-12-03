@@ -50,17 +50,6 @@ body {
   *zoom: 1;
 }
 
-// 自定义浏览器滚动条样式。
-::-webkit-scrollbar {
-  width: 5px;
-  background: #ffffff;
-  border-radius: 2.5px;
-}
-::-webkit-scrollbar-thumb {
-  background: #8a8a8a;
-  border-radius: 2.5px;
-}
-
 // 字体设置。
 @font-face {
   font-family: Emoji;
@@ -78,4 +67,15 @@ body {
 // 等宽字体。
 .font-mono {
   font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+// 自定义浏览器滚动条样式。
+::-webkit-scrollbar {
+  width: 5px;
+  background: #ffffff;
+  border-radius: 2.5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #8a8a8a;
+  border-radius: 2.5px;
 }
