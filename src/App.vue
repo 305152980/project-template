@@ -1,5 +1,5 @@
 <template>
-  <div id="app">你好，程序员!</div>
+  <div id="app">Hello World!</div>
 </template>
 
 <script>

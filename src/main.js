@@ -3,11 +3,17 @@ import Vue from 'vue'
 // 导入 CSS 样式重置库。
 import 'normalize.css'
 
+// 按需导入 ElementUI 组件库。
+import '@/components/elementui/index.js'
+
 // 导入自定义公共样式。
 import '@/assets/styles/index.scss'
 
-// 按需导入 ElementUI 组件库。
-import '@/components/elementui/index.js'
+// 导入自定义全局组件。
+import Globals from '@/components/globals/index.js'
+
+// 导入自定义公共组件。
+import Commons from '@/components/commons/index.js'
 
 import App from './App.vue'
 
@@ -20,6 +26,12 @@ import '@/router/routerNavGuard.js'
 import store from '@/store/index.js'
 
 Vue.config.productionTip = false
+
+// 注册自定义全局组件。
+Vue.use(Globals)
+
+// 注册自定义公共组件。
+Vue.use(Commons)
 
 new Vue({
   router,
