@@ -79,6 +79,10 @@ import {
   Notification
 } from 'element-ui'
 
+// lang i18n。
+import lang from 'element-ui/lib/locale/lang/zh-CN'
+import locale from 'element-ui/lib/locale'
+
 Vue.use(Pagination)
 Vue.use(Dialog)
 Vue.use(Autocomplete)
@@ -162,3 +166,6 @@ Vue.prototype.$confirm = MessageBox.confirm
 Vue.prototype.$prompt = MessageBox.prompt
 Vue.prototype.$notify = Notification
 Vue.prototype.$message = Message
+
+// 设置语言。
+locale.use(lang)
