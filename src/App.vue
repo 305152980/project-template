@@ -3,11 +3,11 @@
 </template>
 
 <script>
-// import DevicePixelRatio from '@/utils/devicePixelRatio'
+import DevicePixelRatio from '@/utils/devicePixelRatio.js'
 export default {
   name: 'App',
   created() {
-    // new DevicePixelRatio().init()
+    new DevicePixelRatio().init()
   }
 }
 </script>
