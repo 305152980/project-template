@@ -4,4 +4,13 @@ importFn.keys().forEach(path => {
   routerModuleList = [...routerModuleList, ...importFn(path).default]
 })
 
-export default [...routerModuleList]
+const Layout = () => import('@/views/layout/index.vue')
+
+export default [
+  {
+    path: '/',
+    component: Layout,
+    redirect: '/home',
+    children: [...routerModuleList]
+  }
+]
