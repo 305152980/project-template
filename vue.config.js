@@ -1,5 +1,7 @@
 module.exports = {
-  // 是否在开发过程中使用 eslint-loader 执行 lint-on-save。
+  // 配置项目的静态资源引入时的基础路径。
+  publicPath: process.env.NODE_ENV === 'development' ? '/' : '/',
+  // 设置是否在开发环境下每次保存代码时都启用 eslint验证。
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   chainWebpack: config => {
@@ -19,8 +21,7 @@ module.exports = {
     proxy: {
       '/dev-api': {
         // 目标服务器的地址。
-        // 测试 Axios 请求的目标服务器地址。
-        target: 'http://ihrm-java.itheima.net/api',
+        target: 'http://......',
         // 支持 websocket 请求的代理。
         ws: true,
         // 代理服务器转发请求时请求头中的 host 值是否伪装。
