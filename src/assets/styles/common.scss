@@ -39,17 +39,6 @@ body {
   font: 12px/1.5 'Microsoft YaHei';
 }
 
-.clearfix:after {
-  content: '.';
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-.clearfix {
-  *zoom: 1;
-}
-
 // 字体设置。
 @font-face {
   font-family: Emoji;
