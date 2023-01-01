@@ -58,6 +58,20 @@ export default {
           ]
         },
         {
+          icon: 'el-icon-picture-outline',
+          title: 'echarts',
+          address: '',
+          level: '1',
+          children: [
+            {
+              title: '地图',
+              address: '/map',
+              level: '2',
+              children: []
+            }
+          ]
+        },
+        {
           icon: 'el-icon-folder-opened',
           title: '文件上传下载',
           address: '',

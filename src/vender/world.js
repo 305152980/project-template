@@ -1,8 +1,7 @@
+/* eslint-disable no-undef */
 ;(function(root, factory) {
-  // eslint-disable-next-line no-undef
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    // eslint-disable-next-line no-undef
     define(['exports', 'echarts'], factory)
   } else if (typeof exports === 'object' && typeof exports.nodeName !== 'string') {
     // CommonJS
