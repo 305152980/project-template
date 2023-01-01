@@ -10,7 +10,7 @@
             <span>{{ item_1.title }}</span>
           </template>
         </el-menu-item>
-        <el-submenu v-else :key="`${index_1}key`" :index="item_1.address">
+        <el-submenu v-else :key="`${index_1}key`" :index="`${item_1.level}-${index_1}`">
           <template slot="title">
             <i :class="item_1.icon"></i>
             <span>{{ item_1.title }}</span>
@@ -20,7 +20,7 @@
             <el-menu-item v-if="item_2.address" :key="`${index_2}key`" :index="item_2.address">
               {{ item_2.title }}
             </el-menu-item>
-            <el-submenu v-else :key="`${index_2}key`" :index="item_2.address">
+            <el-submenu v-else :key="`${index_2}key`" :index="`${item_2.level}-${index_2}`">
               <template slot="title">{{ item_2.title }}</template>
               <!-- 三级菜单。 -->
               <template v-for="(item_3, index_3) in item_2.children">
@@ -44,22 +44,32 @@ export default {
       defaultActive: '',
       sidebarMenuTree: [
         {
-          icon: 'el-icon-location', // 只有第一级菜单有 icon 属性。
-          title: '模块一',
+          icon: 'el-icon-user', // 只有一级菜单有 icon 属性。
+          title: '个人中心',
           address: '', // address 为空，代表为目录；address 非空，代表为页面。
+          level: '1',
           children: [
             {
               title: '首页',
               address: '/home',
+              level: '2',
               children: []
             }
           ]
         },
         {
-          icon: 'el-icon-menu',
-          title: '模块二',
-          address: '/111111',
-          children: []
+          icon: 'el-icon-folder-opened',
+          title: '文件上传下载',
+          address: '',
+          level: '1',
+          children: [
+            {
+              title: '文件上传',
+              address: '/fileUpload',
+              level: '2',
+              children: []
+            }
+          ]
         }
       ]
     }
