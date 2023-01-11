@@ -45,7 +45,7 @@ export default {
       sidebarMenuTree: [
         {
           icon: 'el-icon-user', // 只有一级菜单有 icon 属性。
-          title: '个人中心',
+          title: '开发ing',
           address: '', // address 为空，代表为目录；address 非空，代表为页面。
           level: '1',
           children: [
@@ -66,6 +66,12 @@ export default {
             {
               title: '地图',
               address: '/map',
+              level: '2',
+              children: []
+            },
+            {
+              title: '地图-jspn',
+              address: '/mapJson',
               level: '2',
               children: []
             }
