@@ -50,8 +50,8 @@ export default {
           level: '1',
           children: [
             {
-              title: '首页',
-              address: '/home',
+              title: 'demoOne',
+              address: '/demoOne',
               level: '2',
               children: []
             }
@@ -64,13 +64,13 @@ export default {
           level: '1',
           children: [
             {
-              title: '地图',
-              address: '/map',
+              title: '地图.js',
+              address: '/mapJs',
               level: '2',
               children: []
             },
             {
-              title: '地图-jspn',
+              title: '地图.jspn',
               address: '/mapJson',
               level: '2',
               children: []
@@ -103,6 +103,7 @@ export default {
     }
   },
   created() {},
+  mounted() {},
   methods: {}
 }
 </script>
