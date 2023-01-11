@@ -10,7 +10,7 @@ export default [
   {
     path: '/',
     component: Layout,
-    redirect: '/home',
+    redirect: '/demoOne',
     children: [...routerModuleList]
   }
 ]
