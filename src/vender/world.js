@@ -32037,7 +32037,7 @@
             ]
           ]
         },
-        properties: { name: '', childNum: 1 }
+        properties: { name: 'N. Kashmir', childNum: 1 }
       },
       {
         geometry: {
@@ -32120,7 +32120,7 @@
             ]
           ]
         },
-        properties: { name: '', childNum: 1 }
+        properties: { name: 'S. Kashmir', childNum: 1 }
       }
     ]
   })
