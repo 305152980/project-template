@@ -20,17 +20,26 @@ export default {
   methods: {
     async initChinaMap() {
       var option = {
+        title: {
+          text: '中国地图',
+          x: 'center',
+          textStyle: {
+            fontSize: 24
+          }
+        },
         series: [
           {
             type: 'map',
-            map: 'china',
+            map: 'chinaJson',
+            zoom: 1.4,
+            top: 145,
             data: []
           }
         ]
       }
 
       const chinaJsonData = await import('@/apis/constant/map/china.json')
-      echarts.registerMap('china', chinaJsonData)
+      echarts.registerMap('chinaJson', chinaJsonData)
       this.chinaMap = echarts.init(document.getElementById('mapBox'))
       this.chinaMap.setOption(option)
 
