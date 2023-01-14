@@ -1,4 +1,4 @@
-# project_template
+# project-template
 
 ## Project setup
 
