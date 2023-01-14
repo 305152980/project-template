@@ -30,7 +30,7 @@ export default {
         series: [
           {
             type: 'map',
-            map: 'chinaJson',
+            map: 'china',
             zoom: 1.4,
             top: 145,
             data: []
@@ -39,7 +39,7 @@ export default {
       }
 
       const chinaJsonData = await import('@/apis/constant/map/china.json')
-      echarts.registerMap('chinaJson', chinaJsonData)
+      echarts.registerMap('china', chinaJsonData)
       this.chinaMap = echarts.init(document.getElementById('mapBox'))
       this.chinaMap.setOption(option)
 
