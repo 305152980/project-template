@@ -70,7 +70,7 @@ export default {
               children: []
             },
             {
-              title: '地图.jspn',
+              title: '地图.json',
               address: '/mapJson',
               level: '2',
               children: []

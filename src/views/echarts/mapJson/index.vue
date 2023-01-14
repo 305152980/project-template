@@ -5,14 +5,40 @@
 </template>
 
 <script>
+import * as echarts from 'echarts'
 export default {
   name: 'MapJson',
   data() {
-    return {}
+    return {
+      chinaMap: null
+    }
   },
   created() {},
-  mounted() {},
-  methods: {}
+  mounted() {
+    this.initChinaMap()
+  },
+  methods: {
+    async initChinaMap() {
+      var option = {
+        series: [
+          {
+            type: 'map',
+            map: 'china',
+            data: []
+          }
+        ]
+      }
+
+      const chinaJsonData = await import('@/apis/constant/map/china.json')
+      echarts.registerMap('china', chinaJsonData)
+      this.chinaMap = echarts.init(document.getElementById('mapBox'))
+      this.chinaMap.setOption(option)
+
+      this.chinaMap.on('click', params => {})
+
+      this.chinaMap.getZr().on('click', params => {})
+    }
+  }
 }
 </script>
 
