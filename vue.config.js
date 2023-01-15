@@ -1,7 +1,7 @@
 module.exports = {
   // 配置项目的静态资源引入时的基础路径。
   publicPath: process.env.NODE_ENV === 'development' ? '/' : '/',
-  // 设置是否在开发环境下每次保存代码时都启用 eslint验证。
+  // 设置是否在开发环境下每次保存代码时都启用 eslint 验证。
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   chainWebpack: config => {

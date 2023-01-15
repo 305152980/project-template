@@ -4,7 +4,7 @@ import Vue from 'vue'
 import 'normalize.css'
 
 // 按需导入 ElementUI 组件库。
-import '@/components/elementui/index.js'
+import '@/components/element-ui/index.js'
 
 // 导入自定义公共样式。
 import '@/assets/styles/index.scss'
@@ -20,7 +20,7 @@ import App from './App.vue'
 // 导入 VueRouter 模块。
 import router from '@/router/index.js'
 // 添加路由权限控制。
-import '@/router/routerNavGuard.js'
+import '@/router/router-nav-guard.js'
 
 // 导入 Vuex 模块。
 import store from '@/store/index.js'

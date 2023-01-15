@@ -5,7 +5,7 @@
 </template>
 
 <script>
-// import DevicePixelRatio from '@/utils/devicePixelRatio.js'
+// import DevicePixelRatio from '@/utils/device-pixel-ratio.js'
 export default {
   name: 'App',
   created() {

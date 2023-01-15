@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import constantRoutes from '@/router/constantRoutes.js'
+import constantRoutes from '@/router/constant-routes.js'
 
 // 全局注册 VueRouter 路由模块。
 Vue.use(VueRouter)

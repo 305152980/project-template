@@ -1,7 +1,7 @@
 const mockList = []
 
 module.exports = function(app) {
-  if (process.env.MOCK === 'true') {
+  if (process.env.VUE_APP_MOCK === 'true') {
     mockList.forEach(item => {
       app.use(item.url, (req, res) => {
         item.function(req)

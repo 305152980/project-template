@@ -1,15 +1,15 @@
-const MapJs = () => import('@/views/echarts/mapJs/index.vue')
-const MapJson = () => import('@/views/echarts/mapJson/index.vue')
+const mapJs = () => import('@/views/echarts/map-js/index.vue')
+const mapJson = () => import('@/views/echarts/map-json/index.vue')
 
 export default [
   {
     path: '/mapJs',
-    name: 'mapJs',
-    component: MapJs
+    name: 'MapJs',
+    component: mapJs
   },
   {
     path: '/mapJson',
-    name: 'mapJson',
-    component: MapJson
+    name: 'MapJson',
+    component: mapJson
   }
 ]

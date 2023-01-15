@@ -2,11 +2,11 @@
   <div class="layout-container">
     <el-container>
       <el-aside width="300px">
-        <sidebar />
+        <SideBar />
       </el-aside>
       <el-container>
         <el-header>
-          <navbar />
+          <NavBar />
         </el-header>
         <el-main>
           <router-view />
@@ -17,13 +17,13 @@
 </template>
 
 <script>
-import Sidebar from './Sidebar.vue'
-import Navbar from './Navbar.vue'
+import SideBar from './side-bar.vue'
+import NavBar from './nav-bar.vue'
 export default {
   name: 'Layout',
   components: {
-    Sidebar,
-    Navbar
+    SideBar,
+    NavBar
   },
   data() {
     return {}
