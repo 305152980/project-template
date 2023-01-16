@@ -14,9 +14,9 @@ class DevicePixelRatio {
 
   // 监听页面的缩放。
   _watch() {
-    const thiz = this
-    thiz._watchHandler(window, 'resize', function() {
-      thiz._correct()
+    const self = this
+    self._watchHandler(window, 'resize', function() {
+      self._correct()
     })
   }
 
