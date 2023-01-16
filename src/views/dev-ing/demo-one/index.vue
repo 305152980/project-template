@@ -42,10 +42,15 @@ export default {
 
 <style lang="scss" scoped>
 .demo-one-container {
+  position: relative;
+  height: 100%;
   #baduMapBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 600px;
     height: 450px;
-    margin: 0 auto;
     border: 1px #000000 solid;
   }
 }
