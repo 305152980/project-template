@@ -45,7 +45,7 @@ export const provinceNameMapTwo = {
   // 23 个省。
   台湾: 'taiwan',
   河北: 'hebei',
-  山西: 'shanxi',
+  山西: 'shanxi-1',
   辽宁: 'liaoning',
   吉林: 'jilin',
   黑龙江: 'heilongjiang',
@@ -63,7 +63,7 @@ export const provinceNameMapTwo = {
   四川: 'sichuan',
   贵州: 'guizhou',
   云南: 'yunnan',
-  陕西: 'shanxi1',
+  陕西: 'shanxi-2',
   甘肃: 'gansu',
   青海: 'qinghai',
   // 5 个自治区。
