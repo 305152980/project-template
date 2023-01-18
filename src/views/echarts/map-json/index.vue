@@ -53,9 +53,9 @@ export default {
         console.log(111, params.name)
         console.log(222, provinceNameMapTwo[params.name])
         const provinceJsonData = await import(
-          '@/constants/map/provinces/' + provinceNameMapTwo[params.name] + '.json'
+          '@/constants/map/province/' + provinceNameMapTwo[params.name] + '.json'
         )
-        // const provinceJsonData = await import(`@/constants/map/provinces/${provinceNameMapTwo[params.name]}.json`)
+        // const provinceJsonData = await import(`@/constants/map/province/${provinceNameMapTwo[params.name]}.json`)
         console.log(333, provinceJsonData)
         this.title = params.name
         echarts.registerMap(provinceNameMapTwo[params.name], provinceJsonData)
