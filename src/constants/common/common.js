@@ -1,3 +1,3 @@
-// export const objOne = {}
+export const objOne = {}
 
-// export const objTwo = {}
+export const objTwo = {}
