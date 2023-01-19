@@ -1,6 +1,6 @@
 <template>
   <div class="map-js-container">
-    <div id="mapBox" style="width: 100%; height: 100%"></div>
+    <div id="mapCanvas" style="width: 100%; height: 100%"></div>
   </div>
 </template>
 
@@ -57,7 +57,7 @@ export default {
               Afghanistan: '阿富汗',
               Angola: '安哥拉',
               Albania: '阿尔巴尼亚',
-              Aland: '奥兰群岛', //
+              Aland: '奥兰群岛',
               Andorra: '安道尔',
               'United Arab Emirates': '阿拉伯联合酋长国',
               Argentina: '阿根廷',
@@ -296,7 +296,7 @@ export default {
         ]
       }
 
-      this.worldMap = echarts.init(document.getElementById('mapBox'))
+      this.worldMap = echarts.init(document.getElementById('mapCanvas'))
       this.worldMap.setOption(option)
 
       this.worldMap.on('click', params => {
@@ -485,7 +485,7 @@ export default {
         ]
       }
 
-      this.chinaMap = echarts.init(document.getElementById('mapBox'))
+      this.chinaMap = echarts.init(document.getElementById('mapCanvas'))
       this.chinaMap.setOption(option)
 
       this.chinaMap.on('click', params => {})
