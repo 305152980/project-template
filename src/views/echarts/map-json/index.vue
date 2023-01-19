@@ -1,6 +1,6 @@
 <template>
   <div class="map-json-container">
-    <div id="mapBox" style="width: 100%; height: 100%"></div>
+    <div id="mapCanvas" style="width: 100%; height: 100%"></div>
   </div>
 </template>
 
@@ -12,63 +12,21 @@ export default {
   data() {
     return {
       map: null,
-      title: '中国地图'
+      level: 1
     }
   },
   created() {},
-  mounted() {
-    this.initChinaMap()
+  async mounted() {
+    this.map = echarts.init(document.getElementById('mapCanvas'))
+    await this.initChinaMap('中国', 'china', [])
+    this.mountMapEvent()
   },
   methods: {
-    async initChinaMap() {
+    async initChinaMap(title, map, data) {
+      this.level = 1
       var option = {
         title: {
-          text: `${this.title}地图`,
-          x: 'center',
-          textStyle: {
-            fontSize: 24
-          }
-        },
-        series: [
-          {
-            type: 'map',
-            map: 'china',
-            label: {
-              show: true
-            },
-            zoom: 1.4,
-            top: 145,
-            nameMap: provinceNameMapOne,
-            data: []
-          }
-        ]
-      }
-
-      const chinaJsonData = await import('@/constants/map/china.json')
-      echarts.registerMap('china', chinaJsonData)
-      this.map = echarts.init(document.getElementById('mapBox'))
-      this.map.setOption(option)
-
-      this.map.on('click', async params => {
-        console.log(111, params.name)
-        console.log(222, provinceNameMapTwo[params.name])
-        const provinceJsonData = await import(
-          '@/constants/map/province/' + provinceNameMapTwo[params.name] + '.json'
-        )
-        // const provinceJsonData = await import(`@/constants/map/province/${provinceNameMapTwo[params.name]}.json`)
-        console.log(333, provinceJsonData)
-        this.title = params.name
-        echarts.registerMap(provinceNameMapTwo[params.name], provinceJsonData)
-        // // t
-        this.renderMap(provinceNameMapTwo[params.name], [])
-      })
-
-      this.map.getZr().on('click', params => {})
-    },
-    renderMap(map, data) {
-      const option = {
-        title: {
-          text: `${this.title}地图`,
+          text: `${title}地图`,
           x: 'center',
           textStyle: {
             fontSize: 24
@@ -81,12 +39,53 @@ export default {
             label: {
               show: true
             },
-            zoom: 1,
+            zoom: 1.4,
+            top: 145,
+            nameMap: provinceNameMapOne,
             data: data
           }
         ]
       }
+      const mapJsonData = await import('@/constants/map/' + map + '.json')
+      echarts.registerMap(map, mapJsonData)
       this.map.setOption(option, { replaceMerge: ['series'] })
+    },
+    async initProvinceMap(title, map, data) {
+      this.level = 2
+      const option = {
+        title: {
+          text: `${title}地图`,
+          x: 'center',
+          textStyle: {
+            fontSize: 24
+          }
+        },
+        series: [
+          {
+            type: 'map',
+            map: map,
+            label: {
+              show: true
+            },
+            data: data
+          }
+        ]
+      }
+      const mapJsonData = await import('@/constants/map/province/' + map + '.json')
+      echarts.registerMap(map, mapJsonData)
+      this.map.setOption(option, { replaceMerge: ['series'] })
+    },
+    mountMapEvent() {
+      this.map.on('click', async params => {
+        if (this.level === 1) {
+          this.initProvinceMap(params.name, provinceNameMapTwo[params.name], [])
+        }
+      })
+      this.map.getZr().on('click', params => {
+        if (!params.target && this.level === 2) {
+          this.initChinaMap('中国', 'china', [])
+        }
+      })
     }
   }
 }
