@@ -10,6 +10,17 @@ export default {
   name: 'App',
   created() {
     // new DevicePixelRatio().init()
+  },
+  mounted() {
+    window.addEventListener('resize', this.windowSizeChange)
+  },
+  beforeDestroy() {
+    this.$bus.$off('windowSizeChange')
+  },
+  methods: {
+    windowSizeChange() {
+      this.$bus.$emit('windowSizeChange')
+    }
   }
 }
 </script>
