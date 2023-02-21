@@ -17,8 +17,8 @@ const instance = axios.create({
 // 请求拦截器。
 instance.interceptors.request.use(
   async config => {
-    // 验证 token 是否已过期。
-    // 如果过期，退出系统并跳转至登录页；如果未过期，将 token 设置进请求头。
+    // 功能需求：验证 token 是否已过期。
+    // 代码逻辑：如果过期，退出系统并跳转至登录页；如果未过期，将 token 设置进请求头。
     // ......
     return config
   },
@@ -39,7 +39,8 @@ instance.interceptors.response.use(
     }
   },
   error => {
-    // 在这里，如果后端响应给前端 token 已过期，则退出系统并跳转至登录页。
+    // 功能需求：查看后端是否响应给前端 token 已过期。
+    // 代码逻辑：如果后端响应给前端 token 已过期，则退出系统并跳转至登录页。
     // ......
     Message.error(error.message)
     return Promise.reject(error)
