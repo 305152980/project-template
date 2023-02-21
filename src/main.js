@@ -19,6 +19,7 @@ import App from './App.vue'
 
 // 导入 VueRouter 模块。
 import router from '@/router/index.js'
+
 // 添加路由权限控制。
 import '@/router/router-nav-guard.js'
 
