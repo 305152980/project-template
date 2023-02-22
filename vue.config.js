@@ -29,10 +29,10 @@ module.exports = {
         // localhost:8080/dev-api/login ==> http://......:8080/login
         pathRewrite: {
           '^/dev-api': ''
-        },
-        // 在发送请求时，会先在 before 指定的函数中进行处理；如果 before 中没有对应的接口处理逻辑，则会请求服务器的真实接口。
-        before: require('./src/mock/index.js')
-      }
+        }
+      },
+      // 在发送请求时，会先在 before 指定的函数中进行处理；如果 before 中没有对应的接口处理逻辑，则会请求服务器的真实接口。
+      before: require('./src/mock/index.js')
     }
   }
 }
