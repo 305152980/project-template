@@ -9,7 +9,10 @@ import '@/plugins/icons/ant-design/iconfont.js'
 export default {
   name: 'MIcon',
   props: {
-    name: String
+    name: {
+      type: String,
+      require: true
+    }
   }
 }
 </script>
