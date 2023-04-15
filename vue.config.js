@@ -9,6 +9,14 @@ module.exports = {
   // 是否在开发环境下通过 eslint-loader 在每次保存时 lint 代码。这个值会在 @vue/cli-plugin-eslint 被安装之后生效。
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
+  configureWebpack: {
+    resolve: {
+      // 设置路径别名。
+      alias: {
+        'm-ui': '@/components/m-ui'
+      }
+    }
+  },
   chainWebpack: config => {
     config.plugin('html').tap(args => {
       args[0].title = '项目模板'

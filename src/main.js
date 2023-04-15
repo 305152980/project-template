@@ -6,6 +6,9 @@ import 'normalize.css'
 // 按需导入 ElementUI 组件库。
 import '@/components/element-ui/index.js'
 
+// 按需导入 MUI 组件库。
+import 'm-ui/index.js'
+
 // 导入自定义公共样式。
 import '@/assets/styles/index.scss'
 
